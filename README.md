@@ -22,8 +22,11 @@ This project aims to predict whether emails should be labeled as “spam” or n
 ### Description of Demo File
 To run the demo file, restart the kernel and run all cells. After doing so, the output will include exploratory data analysis (EDA) of our spam/ham emails dataset. The EDA includes charts detailing the frequency of misspelled words in spam vs ham emails and word clouds of most common words in spam emails compared to ham emails.
 
+![alt text](https://github.com/0liviaWeisiger/PIC16A_Project/blob/main/ErrPlot.png)
+
 This figure is a graph comparing the number of misspellings in spam and ham emails, for the first 25 emails of the dataset (for efficiency because running the entire dataset will kill a Macbook Air). Since spam emails, blue, tend to have a higher number of misspellings compared to ham emails, red, the frequency of misspelled words would be a relevant variable to use to predict if an email is spam or ham.
 
+![alt text](https://github.com/0liviaWeisiger/PIC16A_Project/blob/main/SpamWC.png)
 
 From the Spam Word Cloud, we can see the most commonly used words in spam emails. Some include “click”, “pills”, and “price.” These words make sense in the context of spam emails, as they are usually advertisements that include a call-to-action so the user will ‘click’ to further investigate their product.
 
