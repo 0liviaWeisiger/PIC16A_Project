@@ -20,9 +20,12 @@ import matplotlib.pyplot as plt
 from spellchecker import SpellChecker
 
 class isSpam:
-    """
-    INSERT DOCSTRING
-    """
+    '''
+    A simple class for investigating text data - specifically emails. 
+    Allows isolation between email subject and body, can return the most 
+    common words in the emails and their frequency, and identifies and 
+    counts spelling errors in the email text.
+    '''
     def __init__(self, text_data):
         self.text_data = text_data
     
