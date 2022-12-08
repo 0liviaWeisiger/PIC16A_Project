@@ -256,4 +256,58 @@ def graphMispellings(spamList, hamList) :
     
     return ax
 
+def check_spam_phrase(df):
+    '''Create and plot the word cloud of spam and ham emails to visualize some common spam words
+    Arguments:
+        - None
+    Returns:
+        - spam_wordcloud: the wordcloud of the spam label
+        - ham_wordcloud: the wordcloud of the ham label
+    '''
+    ham_words = ''
+    spam_words = ''
+
+    # Creating a corpus of spam messages
+    for val in df[df['label'] == 'spam'].text:
+        text = val.lower()
+        tokens = nltk.word_tokenize(text)
+    for words in tokens:
+        spam_words = spam_words + words + ' '
+
+    # Creating a corpus of ham messages
+    for val in df[df['label'] == 'ham'].text:
+        text = text.lower()
+        tokens = nltk.word_tokenize(text)
+    for words in tokens:
+        ham_words = ham_words + words + ' '
+
+    spam_wordcloud = WordCloud(width=500, height=300).generate(spam_words)
+    ham_wordcloud = WordCloud(width=500, height=300).generate(ham_words)    
+
+    # Plot the spam word cloud
+    fig, ax = plt.subplots(1, 2, figsize=(16, 9), sharex=True)
+    ax[0].set(title='Spam Wordcloud')
+    ax[0].imshow(spam_wordcloud)
+    ax[1].imshow(ham_wordcloud)
+    ax[1].set(title='Ham Wordcloud')
+
+    ax[0].axis("off")
+    ax[1].axis("off")
+    plt.tight_layout(pad=0.5)
+    plt.show()
+    return spam_wordcloud, ham_wordcloud
     
+
+def text_process(text):
+    '''
+    Remove the punctuations and stop words of the text
+    Arguments:
+        - text: a string
+    Returns:
+        - a tring after removing
+    
+    '''
+    text = text.translate(str.maketrans('', '', string.punctuation))
+    text = [word for word in text.split() if word.lower() not in stopwords.words('english')]
+
+    return " ".join(text) 
