@@ -310,6 +310,9 @@ def text_process(text):
         - a tring after removing
     
     '''
+    if type(text) != str:
+        raise Exception('Please input string only!')
+        
     text = text.translate(str.maketrans('', '', string.punctuation))
     text = [word for word in text.split() if word.lower() not in stopwords.words('english')]
 
