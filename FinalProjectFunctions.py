@@ -3,15 +3,6 @@ import string
 import re
 from collections import Counter
 
-## Might not need! ####
-# import io 
-# import nltk
-# # Had to run this once
-# nltk.download('stopwords')
-# from nltk.corpus import stopwords
-# from nltk.tokenize import word_tokenize 
-#####
-
 # Installed running this command in the terminal
 # pip install pyspellchecker
 import numpy as np
@@ -28,8 +19,6 @@ class isSpam:
     '''
     def __init__(self, text_data):
         self.text_data = text_data
-    
-    ### OLIVIA'S FUNCTIONS ###
     
     def text_to_dict(self):
         """Count the number of occurrences of n-grams in a string. 
@@ -112,8 +101,6 @@ class isSpam:
             most_occ_list.append(most_occur)
 
         return most_occ_list
-    
-    ### MADDIE'S FUNCTIONS ###
     
     def get_mispelled_words(self):
         """Gets the mispelled words in each element of 
